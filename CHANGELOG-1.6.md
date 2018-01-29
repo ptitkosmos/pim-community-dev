@@ -1,3 +1,7 @@
+# 1.6.X
+
+- PIM-7132: Fix "url too long" when doing a mass edit
+
 # 1.6.21 (2018-01-11)
 
 ## Bug fixes
