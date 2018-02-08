@@ -13,8 +13,7 @@ define(
                 $.post(this.getLinkWithParameters(), {itemIds: this.getSelectedRows().join(',')})
                     .done(function () {
                         var navigation = Navigation.getInstance(),
-                            // url = Routing.generate('pim_enrich_mass_edit_action_sequential_edit_redirect');
-                            url = '/enrich/sequential_edit/redirect';
+                            url = Routing.generate('pim_enrich_mass_edit_action_sequential_edit_redirect');
 
                         navigation.processRedirect({
                             fullRedirect: false,

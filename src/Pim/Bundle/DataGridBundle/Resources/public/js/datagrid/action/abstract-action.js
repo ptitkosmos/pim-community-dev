@@ -211,7 +211,9 @@ function($, _, Backbone, routing, Navigation, __, mediator, messenger, error, Mo
                 return;
             }
             action.datagrid.showLoading();
-            $.post(action.getLinkWithParameters(), {itemIds: action.getSelectedRows().join(',')})
+
+            var payload = _.extend({itemIds: action.getSelectedRows().join(',')}, action.getActionParameters());
+            $.post(action.getLinkWithParameters(), payload)
                 .done(action._onAjaxSuccess.bind(this))
                 .fail(action._onAjaxError.bind(this));
         },
