@@ -1,6 +1,6 @@
 define(
-    ['jquery', 'underscore', 'backbone', 'oro/navigation',  'routing','oro/messenger', 'oro/datagrid/mass-action'],
-    function ($, _, Backbone, Navigation, Routing, messenger, MassAction) {
+    ['jquery', 'oro/translor', 'underscore', 'backbone', 'oro/navigation',  'routing','oro/messenger', 'oro/datagrid/mass-action'],
+    function ($, _, __, Backbone, Navigation, Routing, messenger, MassAction) {
         'use strict';
 
         return MassAction.extend({
@@ -23,7 +23,7 @@ define(
                     .error(function (jqXHR) {
                         messenger.notificationFlashMessage(
                             'error',
-                            _.__(jqXHR.responseText)
+                            __(jqXHR.responseText)
                         );
                     });
             }
